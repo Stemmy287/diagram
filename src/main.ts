@@ -10,7 +10,9 @@ const getData = async () => {
 
   const colors = ['#7858d7', '#ea643f', '#5baa73', '#f4a965']
 
-  const res = await fetch('http://tt.centr-to.ru/frontend-2023.txt')
+  const url = import.meta.env.VITE_DATA_URL
+
+  const res = await fetch(url)
   const text = await res.text()
   data = text.split("\n").filter(el => el).map(el => {
     const newArr = el.split(' ')
