@@ -2,9 +2,10 @@ import './style.css'
 
 let data = []
 
-const diagram = document.querySelector('.diagram')
 const button = document.querySelector('.btn')
 const iconButton = document.querySelector('img')
+const numScheduleContainer = document.querySelector('.num-schedule-container')
+const nameContainer = document.querySelector('.name-container')
 
 const getData = async () => {
 
@@ -19,13 +20,17 @@ const getData = async () => {
     return {name: newArr[0], num: newArr[1]}
   }).sort((a, b) => b.num - a.num)
 
-  diagram.innerHTML = data.map((el, i) => {
+  numScheduleContainer.innerHTML = data.map((el, i) => {
 
       const width = Math.floor(el.num * 10)
 
-      return `<div class="scheduleContainer"><div class="num">${Math.floor(el.num)}</div>
-<div id="schedule" class="schedule" style="height: ${width}px; background-color: ${colors[i]}"></div>
-<span class="name">${el.name}</span></div>`
+      return `<div><div class="num">${Math.floor(el.num)}</div>
+              <div id="schedule" class="schedule" style="height: ${width}px; background-color: ${colors[i]}"></div></div>`
+    }
+  ).join('')
+
+  nameContainer.innerHTML = data.map((el) => {
+      return `<span class="name">${el.name}</span>`
     }
   ).join('')
 
