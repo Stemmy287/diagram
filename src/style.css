@@ -22,8 +22,8 @@
     display: flex;
     align-items: end;
     column-gap: 70px;
-    border: 2px solid rgb(0,0,0, .1);
     padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .scheduleContainer {
@@ -43,10 +43,19 @@
 }
 
 .btn {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
     cursor: pointer;
-    border: none;
     align-self: start;
-    background-color: #00000019;
+    background-color: #d8d7da;
+    border: 2px solid rgb(0,0,0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+    background-color: #8a898d;
+    transition: .3s;
 }
