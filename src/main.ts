@@ -4,8 +4,8 @@ let data = []
 
 const button = document.querySelector('.btn')
 const iconButton = document.querySelector('img')
-const numScheduleContainer = document.querySelector('.num-schedule-container')
-const nameContainer = document.querySelector('.name-container')
+const numScheduleContainer = document.querySelector('.schedule__num-column')
+const nameContainer = document.querySelector('.schedule__name')
 
 const getData = async () => {
 
@@ -25,7 +25,7 @@ const getData = async () => {
       const width = Math.floor(el.num * 10)
 
       return `<div><div class="num">${Math.floor(el.num)}</div>
-              <div id="schedule" class="schedule" style="height: ${width}px; background-color: ${colors[i]}"></div></div>`
+              <div class="column" style="height: ${width}px; background-color: ${colors[i]}"></div></div>`
     }
   ).join('')
 

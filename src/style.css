@@ -18,36 +18,35 @@
     column-gap: 30px;
 }
 
-.diagram {
+.schedule {
     padding: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-.schedule-container {
+.schedule__content {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.num-schedule-container {
+.schedule__num-column {
     display: flex;
     align-items: end;
     column-gap: 41px;
 }
 
-.schedule {
+.num {
+    text-align: center;
+}
+
+.column {
     width: 50px;
     background-color: #7858d7;
 }
 
-.name-container {
+.schedule__name {
     display: flex;
     column-gap: 41px;
-
-}
-
-.num {
-    text-align: center;
 }
 
 .name {
