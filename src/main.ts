@@ -1,4 +1,6 @@
 import './style.css'
+import pause from './img/pause-svgrepo-com.svg'
+import play from './img/play-svgrepo-com.svg'
 
 let data: Array<DataType> = []
 
@@ -23,7 +25,7 @@ const fetchData = async () => {
 
       return {name: newArr[0], num: newArr[1]}
 
-    }).sort((a, b) => b.num - a.num)
+    }).sort((a, b) => +b.num - +a.num)
 
 }
 
@@ -35,7 +37,7 @@ const outputData = async () => {
 
     await fetchData()
 
-    numsAndColumnsContainer.innerHTML = data.map((el, i) => {
+    numsAndColumnsContainer!.innerHTML = data.map((el, i) => {
 
         const width = Math.floor(+el.num) * 10
 
@@ -44,7 +46,7 @@ const outputData = async () => {
       }
     ).join('')
 
-    namesContainer.innerHTML = data.map((el) => `<span class="name">${el.name}</span>`).join('')
+    namesContainer!.innerHTML = data.map((el) => `<span class="name">${el.name}</span>`).join('')
 
   } catch (e) {
     console.log(e)
@@ -54,18 +56,18 @@ const outputData = async () => {
 
 outputData()
 
-let timer = setInterval(outputData, 5000)
+let timer = window.setInterval(outputData, 5000)
 
-button.addEventListener('click', () => {
+button!.addEventListener('click', () => {
 
   if (timer) {
     clearInterval(timer)
     timer = 0
-    iconButton.setAttribute('src', 'src/img/play-svgrepo-com.svg')
+    iconButton!.setAttribute('src', play)
   } else {
     outputData()
-    timer = setInterval(outputData, 5000)
-    iconButton.setAttribute('src', 'src/img/pause-svgrepo-com.svg')
+    timer = window.setInterval(outputData, 5000)
+    iconButton!.setAttribute('src', pause)
   }
 
 })
